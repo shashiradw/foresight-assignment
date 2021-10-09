@@ -1,1 +1,107 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  min-width: 800px;
+  margin: 30px auto;
+  overflow: hidden;
+  min-height: 500px;
+  border: 1px solid steelblue;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  
+  
+}
+
+@media screen and (max-width: 850px) {
+  .container {
+    /* min-width: 800px;
+    margin: 30px auto;
+    overflow: hidden;
+    min-height: 500px;
+    border: 1px solid steelblue;
+    border-radius: 10px; */
+
+    display: flexbox;
+  }
+}
+
+.login-page{
+
+  border: 1px solid steelblue;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+  
+}
+
+.btn {
+  display: inline-block;
+  color:green;
+  padding: 5px 10px;
+  width: 60%;
+  margin-top: 40px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: inherit;
+
+}
+.btn:focus {
+  outline: none;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.form-control {
+  margin: 20px ;
+}
+
+.form-control input {
+  width: 90%;
+  height: 30px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid rgb(206, 206, 206);
+}
+
+input:hover {
+  border-bottom: 1px solid black;
+}
+
+input:focus {
+  border-bottom: 1px solid black;
+}
+
+
+.form-control-check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#check-box{
+  height: 20px;
+  margin: 0 10px;
+  width: fit-content !important;
+}

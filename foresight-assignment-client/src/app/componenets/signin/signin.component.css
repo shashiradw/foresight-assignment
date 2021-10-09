@@ -1,0 +1,19 @@
+.logo-area{
+    flex: 2;
+    background-color: rgb(40, 133, 110);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-width: 200px; */
+}
+
+.field-area{
+    flex: 3;
+    align-self: center;
+    /* min-width: 400px; */
+}
+
+.image-logo{
+    justify-content: center;
+
+}
