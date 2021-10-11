@@ -1,20 +1,23 @@
 <div>
     <h1>Login</h1>
 
-    <form class="form-control">
+    <form #login="ngForm" class="form-control" (ngSubmit)="onSubmit(login)">
 
         <div class="form-group">
-            <input type="text" name ="name" class="form-control" placeholder="Username">
+            <input required type="text" name ="name" class="form-control" placeholder="Username" [(ngModel)]="name" >    
+            <span *ngIf="emptyName"> Name can not be empty !</span>
+        
         </div>
         <pre></pre>
 
         <div class="form-group">
-            <input type="password" name ="password" class="form-control" placeholder="Password">
+            <input required minlength="4" maxlength="10" type="password" name ="password" class="form-control" placeholder="Password" [(ngModel)]="pwd" >
+            <span *ngIf="emptyPwd"> password cannot be empty!</span>
         </div>
 
         <pre></pre>
          <div class="form-control-check">
-            <input id="check-box" type="checkbox" name ="remember">
+            <input id="check-box" type="checkbox" name ="remember" ngModel>
             <label>Remember Me!</label>
         </div>
         <button class="btn">Submit</button>
