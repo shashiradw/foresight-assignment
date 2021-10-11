@@ -1,19 +1,34 @@
 const mongoose = require('mongoose');
 const User= mongoose.model('User');
+const session= require('express-session');
+const bcrypt= require('bcryptjs');
 
 //If the current middleware function does not end the request-response cycle, it must call next() to pass control to the next middleware function.
 // Otherwise, the request will be left hanging.
 
-module.exports.signIn=(req,res,next)=>{
-    
-
+module.exports.signIn=async (req,res,next)=>{
     var user= new User();
-    user.name=req.body.name;
+    user.name=req.body.username;
     user.password=req.body.password;
 
-    console.log("Signing ......" + user.name);
+    //  req.session.isAuth=true;
 
-    res.send("Hello");
+    console.log("Signing ......" + req.session);
+
+    // res.send('Hello ' + JSON.stringify(req.session));
+    const query  = User.where({ name: user.name });
+    const user1 = await query.findOne();
+    console.log(user);
+
+    if(!user1){
+        return res.send(JSON.stringify("false"));
+    }
+    const isMatch = await bcrypt.compare(user.password, user1.password);
+    if(!isMatch){
+        return res.send(JSON.stringify("false"));
+    }
+  
+    res.send(JSON.stringify("true"));
 }
 
 module.exports.register=(req,res,next)=>{
