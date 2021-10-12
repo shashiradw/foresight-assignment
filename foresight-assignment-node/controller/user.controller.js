@@ -12,7 +12,6 @@ module.exports.signIn=async (req,res,next)=>{
     user.password=req.body.password;
 
     //  req.session.isAuth=true;
-
     console.log("Signing ......" + req.session);
 
     // res.send('Hello ' + JSON.stringify(req.session));
@@ -32,8 +31,6 @@ module.exports.signIn=async (req,res,next)=>{
 }
 
 module.exports.register=(req,res,next)=>{
-    
-
     var user= new User();
     user.name=req.body.name;
     user.password=req.body.password;
