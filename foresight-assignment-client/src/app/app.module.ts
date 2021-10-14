@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SigninComponent } from './componenets/signin/signin.component';
 import { FormComponent } from './componenets/form/form.component';
+import { HomeComponent } from './componenets/home/home.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { FormComponent } from './componenets/form/form.component';
     AppComponent,
     SigninComponent,
     FormComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

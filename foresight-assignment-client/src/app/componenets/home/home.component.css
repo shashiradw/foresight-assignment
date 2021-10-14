@@ -1,0 +1,32 @@
+.can-vas{
+    /* width: 90%;
+    height: 90%; */
+    border: 1px solid black;
+    overflow: hidden;
+    
+}
+
+
+
+.floating-btn {
+    background-color: green;
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    color:white;
+    font-size: 36px;
+    transition: .3s;
+  }
+  
+  .floating-btn:focus {
+    background-color: #F44336;
+    transform: scale(1.1);
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }

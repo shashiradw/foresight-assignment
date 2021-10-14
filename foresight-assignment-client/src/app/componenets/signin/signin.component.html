@@ -1,12 +1,13 @@
-<div class="container">
-
-    <div class="logo-area">
-        <img class="image-logo" src="../../assets/image/man-avatar.png">
-    </div>
-    
-    <div class="field-area">
-        <app-form (login)="login($event)"></app-form>
-        <div class="invalid-login" *ngIf="isInValidLogin">Invalid Credentials!</div>
+<div class="login-page">
+    <div class="container">
+        <div class="logo-area">
+            <img class="image-logo" src="../../assets/image/man-avatar.png">
+        </div>
+        
+        <div class="field-area">
+            <app-form (login)="login($event)"></app-form>
+            <div class="invalid-login" *ngIf="isInValidLogin">Invalid Credentials!</div>
+        </div>
     </div>
 </div>
 
