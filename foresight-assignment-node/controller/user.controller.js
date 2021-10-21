@@ -20,14 +20,14 @@ module.exports.signIn=async (req,res,next)=>{
     console.log(user);
 
     if(!user1){
-        return res.send(JSON.stringify("false"));
+        res.send(JSON.stringify("false")); 
     }
     const isMatch = await bcrypt.compare(user.password, user1.password);
     if(!isMatch){
-        return res.send(JSON.stringify("false"));
+        res.send(JSON.stringify("false")); 
     }
-  
-    res.send(JSON.stringify("true"));
+    
+    res.send(JSON.stringify(user));
 }
 
 module.exports.register=(req,res,next)=>{

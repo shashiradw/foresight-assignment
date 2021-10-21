@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
-import { UserLogin } from 'src/UserLogin';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SigninService {
+export class PolygonService {
 
-  private apiUrl='http://localhost:5000/api/signin';
+  private apiUrl='http://localhost:5000/api/polygon?name='+sessionStorage.getItem("name");
 
   constructor(private http : HttpClient) { }
 
-  signIn(user : UserLogin) : Observable<any>{   
-    return this.http.post<any> (this.apiUrl, user);
+  drawPolygon(point: [number,number]): Observable<any>{   
+    return this.http.post<any> (this.apiUrl,point);
   }
+  
 }

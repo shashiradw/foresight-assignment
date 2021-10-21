@@ -18,15 +18,19 @@ export class SigninComponent implements OnInit {
 
   login(user : UserLogin ){
     this.signInService.signIn(user).subscribe(
-      (isValid)=>{
-        var isTrue = (isValid === 'true');
-        this.isInValidLogin=!isTrue;
-        // console.log('Valid',isValid);
-        if(isTrue){
+
+      (response)=>{ 
+
+        if(response === 'false'){
+          this.isInValidLogin=true;
+        }else{
           //Redirect to the home
           this.router.navigateByUrl('/home');
-
+          
+         sessionStorage.setItem("name", response['name']);
+         //console.log(sessionStorage.getItem("name"));
         }
+
       }
     );
   }

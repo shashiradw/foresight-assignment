@@ -15,3 +15,6 @@ mongoose.connect(process.env.MONGO_URI, (err)=>{
 
 
 require('./user.model');
+require('./polygon.model');
+
+ 

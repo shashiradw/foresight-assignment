@@ -32,16 +32,20 @@ const store = new MongoDBSession({
 store.on('error', function(error) {
     console.log(error);
   });
+
   
   app.use(require('express-session')({
     secret: 'This is a secret',
     cookie: {
-      maxAge: 1000 * 60 * 60 * 24 * 7 // 1 week
+      expires: 600000 // 6 days
     },
     store: store,
-    resave: true,
-    saveUninitialized: true
+    resave: false,
+    saveUninitialized: false,
+
   }));
+
+  
 
 
 //Routing middleware
